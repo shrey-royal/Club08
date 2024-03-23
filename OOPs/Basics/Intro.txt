@@ -26,15 +26,15 @@ Syntax of a class:
 class class_name
 {
     access_specifier:
-        data members;
-        member functions();
+        data members;   //class variables / attributes / properties
+        member functions(); //methods / behaviour
 };
 
 access_specifier: It defines the access type of the data members and member functions. It can be public, private or protected.
 
 public: Data members and member functions declared as public can be accessed by other classes and functions too.
 
-private: Data members and member functions declared as private can be accessed only by the member functions of the class.
+private(default): Data members and member functions declared as private can be accessed only by the member functions of the class.
 
 protected: Data members and member functions declared as protected can be accessed by the member functions of the same class and by the member functions of the derived classes.
 
