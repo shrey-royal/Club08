@@ -47,36 +47,93 @@ int main() {
 }
 
 /*
-tasks:
+Tasks:
 
-1. Library Management System:
-   Problem Statement: Design a system to manage library resources such as books, journals, and DVDs. Implement classes for library items, patrons, and a system to handle checkouts, returns, and overdue fines.
+1. Library Management System (Simple):
 
-2. Online Shopping System:
-   Problem Statement: Create a platform for online shopping where customers can browse products, add them to their cart, and proceed to checkout. Implement classes for products, customers, and shopping carts, with features for adding/removing items and calculating totals.
+-> Problem: Design a system to track books borrowed by a patron.
+-> Classes:
+    -> Book (attributes: title, author, ISBN)
+    -> Patron (attributes: name, library ID)
+    -> Checkout (attributes: book object, patron object, checkout date)
+-> Methods:
+    -> 'Book.borrowedBy(patron)': Marks the book as borrowed by the patron (updates a flag or creates a checkout object).
+    -> 'Patron.borrows(book)': Records the borrowing of the book for the patron.
 
-3. Bank Account Management:
-   Problem Statement: Develop a system to manage bank accounts with features like deposits, withdrawals, and balance inquiries. Implement classes for different account types such as savings and checking accounts, each with appropriate functionalities.
+2. Online Shopping System (Simple):
 
-4. Student Information System:
-   Problem Statement: Build a system to store and manage student information including details like name, ID, courses enrolled, and grades. Design classes to represent students, courses, and grades, with methods for adding new students, enrolling them in courses, and calculating GPA.
+-> Problem: Simulate adding a product to a cart and calculating its total price.
+-> Classes:
+    -> Product (attributes: name, price)
+    -> Cart (attributes: list of product objects)
+-> Methods:
+    -> 'Cart.addProduct(product)': Adds the product to the cart's list.
+    -> 'Cart.getTotalPrice()': Calculates the sum of all product prices in the cart.
 
-5. Hospital Management System:
-   Problem Statement: Design a software solution to manage hospital operations including patient records, appointments, and medical histories. Implement classes for patients, doctors, appointments, and medical records, with functionalities for scheduling appointments, updating records, and managing billing.
+3. Bank Account Management (Simple):
 
-6. Inventory Management System:
-   Problem Statement: Create a system to track inventory for a retail store, including products, quantities, and sales. Design classes for products, inventory items, and sales transactions, with methods for updating inventory levels and generating sales reports.
+-> Problem: Implement a basic savings account with deposit functionality.
+-> Classes:
+    -> SavingsAccount (attributes: account number, balance)
+-> Methods:
+    -> 'SavingsAccount.deposit(amount)': Adds the amount to the account balance.
 
-7. Car Rental System:
-   Problem Statement: Develop a platform for renting cars to customers, handling reservations, and tracking vehicle availability. Implement classes for cars, customers, reservations, and rental transactions, with features for checking availability, making reservations, and processing payments.
+4. Student Information System (Simple):
 
-8. Employee Payroll System:
-   Problem Statement: Build a system to manage employee payroll, including tracking hours worked, calculating salaries, and generating pay stubs. Design classes for employees, timecards, and pay periods, with functionalities for recording hours, calculating wages, and generating reports.
+-> Problem: Store and display student information.
+-> Classes:
+    -> Student (attributes: name, ID number)
+-> Methods:
+    -> 'Student.getDetails()': Returns a string with the student's name and ID.
 
-9. Hotel Booking System:
-   Problem Statement: Design a software solution for managing hotel reservations, room assignments, and guest check-ins. Implement classes for rooms, guests, reservations, and bookings, with features for checking availability, making reservations, and processing payments.
+5. Hospital Management System (Simple):
 
-10. Social Media Platform:
-    Problem Statement: Create a social media platform where users can create profiles, connect with friends, and share posts. Implement classes for users, profiles, connections, and posts, with functionalities for adding friends, posting updates, and interacting with other users' content.
+-> Problem: Schedule an appointment for a patient with a doctor.
+-> Classes:
+    -> Patient (attributes: name)
+    -> Doctor (attributes: name)
+    -> Appointment (attributes: patient object, doctor object, date)
+-> Methods:
+    -> 'Appointment.schedule(patient, doctor, date)': Creates an appointment object with the provided details.
+
+6. Inventory Management System (Simple):
+
+-> Problem: Track the quantity of a product in stock.
+-> Classes:
+    -> Product (attributes: name, stock quantity)
+-> Methods:
+    -> 'Product.checkStock()': Returns the current stock quantity.
+
+7. Car Rental System (Simple):
+
+-> Problem: Check the availability of a car for a specific date.
+-> Classes:
+    -> Car (attributes: model, availability status)
+-> Methods:
+    -> 'Car.isAvailable(date)': Checks if the car is available for the provided date (returns True/False).
+
+8. Employee Payroll System (Simple):
+
+-> Problem: Calculate the total pay for an employee based on a fixed hourly rate and worked hours.
+-> Classes:
+    -> Employee (attributes: name, hourly rate)
+-> Methods:
+    -> 'Employee.calculatePay(hours)': Calculates the total pay by multiplying hourly rate with worked hours.
+
+9. Hotel Booking System (Simple):
+
+-> Problem: Check the availability of a room for a specific date.
+-> Classes:
+    -> Room (attributes: room number, availability status)
+-> Methods:
+    -> 'Room.isAvailable(date)': Checks if the room is available for the provided date (returns True/False).
+
+10. Social Media Platform (Simple):
+
+-> Problem: Create a user profile and display the username.
+-> Classes:
+    -> User (attributes: username)
+-> Methods:
+    -> 'User.getProfile()': Returns the username of the user.
 
 */
