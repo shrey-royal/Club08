@@ -1,25 +1,73 @@
 #include<iostream>
 using namespace std;
 
-class FuelPump {
-    float petrol;
-    float diesel;
-    float cng;
-    bool air;   //bool - boolean (1->true, 0->false)
+class Student {
+private:
+    int rollNo;
+    string name;
+    float marks;
 
-    public:
-    FuelPump() {
-        // petrol = 1000.00;
-        diesel = 678.00;
-        cng = 1234.00;
-        air = false;
-        cout << "Default constructor called..." << endl; 
+public:
+    // Student() {
+    //     rollNo = 0;
+    //     name = "";
+    //     marks = 0.0;
+    //     cout << "Default constructor called..." << endl;
+    // }
+
+    Student() {
+        cout << "\nEnter your rollNo.: ";
+        cin >> rollNo;
+
+        cout << "\nEnter your name: ";
+        cin.ignore();
+        getline(cin, name);
+
+        cout << "\nEnter your marks: ";
+        cin >> marks;
+    }
+
+    // Student(int r, string n, float m) {
+    //     rollNo = r;
+    //     name = n;
+    //     marks = m;
+    //     cout << "Parameterized constructor called..." << endl;
+    // }
+
+    void display() {
+        cout << "RollNo.: " << rollNo << endl;
+        cout << "Name: " << name << endl;
+        cout << "Marks: " << marks << endl;
     }
 };
 
 
 int main() {
-    FuelPump reliance, jio_BP, indian_oil, SHELL;
+    // int rno;
+    // string n;
+    // float m;
+    // Student s(101, "Dhruv", 90.9), s1(102, "Saumyya", 99.9);
+
+    // s.display();
+    // cout << endl;
+    // s1.display();
+
+    // cout << "\nEnter your rollNo.: ";
+    // cin >> rno;
+
+    // cout << "\nEnter your name: ";
+    // cin.ignore();
+    // getline(cin, n);
+
+    // cout << "\nEnter your marks: ";
+    // cin >> m;
+
+    // Student s2(rno, n, m);
+
+    // s2.display();
+
+    Student s;
+    s.display();
 
 
     return 0;
