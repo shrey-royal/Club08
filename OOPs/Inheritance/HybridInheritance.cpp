@@ -34,10 +34,14 @@ public:
 int main() {
     Derived3 obj;
 
-    // obj.display();
+    obj.Derived1::display();  //Ambiguity Error: from which class display() will be called?
     obj.show();
     obj.print();
     obj.output();
 
     return 0;
 }
+
+/*
+Scope Resolution Operator-> (::)
+*/
