@@ -1,0 +1,29 @@
+1. Single Inheritance Problem:
+   - Problem Statement: Implement a basic single inheritance hierarchy with two classes: 'Vehicle' (base class) and 'Car' (derived class). The 'Vehicle' class should have attributes like 'brand' and 'speed', and a method 'displayInfo()'. The 'Car' class should inherit from 'Vehicle', add an attribute 'model', and override the 'displayInfo()' method to include the 'model' information. Use constructors to initialize these attributes and utilize 'this' and 'super' keywords effectively.
+
+2. Multilevel Inheritance Problem:
+   - Problem Statement: Create a multilevel inheritance structure with three classes: 'Animal' (base class), 'Mammal' (derived class), and 'Dog' (further derived class). The 'Animal' class should have an attribute 'species' and a method 'makeSound()'. The 'Mammal' class should add an attribute 'hasFur' and override 'makeSound()'. The 'Dog' class should add an attribute 'breed' and further override 'makeSound()' to specify the dog's sound. Use constructors to initialize attributes and ensure proper use of 'this' and 'super'.
+
+3. Hierarchical Inheritance Problem:
+   - Problem Statement: Implement a hierarchical inheritance setup with a base class 'Person' and two derived classes 'Student' and 'Teacher'. The 'Person' class should have attributes 'name' and 'age', and a method 'introduce()'. The 'Student' class should add an attribute 'grade', while the 'Teacher' class should add 'subject'. Both derived classes should override 'introduce()' to include their specific details. Utilize constructors and the 'super' keyword appropriately.
+
+4. Constructor Chaining with Single Inheritance:
+   - Problem Statement: Design a single inheritance relationship with classes 'Appliance' and 'WashingMachine'. The 'Appliance' class should have attributes 'power' and 'brand', and a constructor to initialize these attributes. The 'WashingMachine' class should add 'capacity' and utilize constructor chaining to initialize all attributes using 'this' and 'super'.
+
+5. Static Members in Multilevel Inheritance:
+   - Problem Statement: Create a multilevel inheritance structure with classes 'Company', 'Department', and 'Employee'. The 'Company' class should have a static attribute 'companyName' and a method 'showCompany()'. The 'Department' class should add 'departmentName', and the 'Employee' class should add 'employeeName' and 'employeeID'. Ensure proper initialization and use static members effectively.
+
+6. Using Super to Call Parent Class Methods:
+   - Problem Statement: Implement a hierarchical inheritance system with classes 'Shape', 'Circle', and 'Rectangle'. The 'Shape' class should have a method 'area()'. Both 'Circle' and 'Rectangle' classes should override the 'area()' method. Ensure 'Circle' and 'Rectangle' call the 'area()' method from 'Shape' using 'super' and then add their specific calculations.
+
+7. Static Block and Static Methods in Single Inheritance:
+   - Problem Statement: Create a single inheritance setup with classes 'Library' and 'Book'. The 'Library' class should have a static block to initialize a static variable 'libraryName', and a static method 'showLibraryInfo()'. The 'Book' class should have attributes 'title' and 'author', and a method 'showBookInfo()'. Demonstrate the use of static blocks, static methods, and the 'super' keyword.
+
+8. Overloading Constructors in Multilevel Inheritance:
+   - Problem Statement: Design a multilevel inheritance structure with classes 'Gadget', 'Phone', and 'Smartphone'. Each class should have multiple constructors to initialize different sets of attributes. Ensure constructor overloading and chaining using 'this' and 'super' keywords.
+
+9. Static Final Variables in Hierarchical Inheritance:
+   - Problem Statement: Implement a hierarchical inheritance setup with classes 'Building', 'Office', and 'Residence'. The 'Building' class should have a static final variable 'BUILDING_TYPE', and a method 'showType()'. The 'Office' and 'Residence' classes should override 'showType()' to display specific information. Ensure correct use of static final variables and method overriding.
+
+10. Using This and Super with Multiple Levels of Inheritance:
+    - Problem Statement: Create a multilevel inheritance hierarchy with classes 'Electronics', 'Computer', and 'Laptop'. The 'Electronics' class should have attributes 'brand' and 'price', and a method 'showDetails()'. The 'Computer' class should add 'processorType' and override 'showDetails()'. The 'Laptop' class should add 'batteryLife' and further override 'showDetails()'. Use constructors, 'this', and 'super' to demonstrate proper initialization and method calls.
