@@ -27,3 +27,35 @@
 
 10. Using This and Super with Multiple Levels of Inheritance:
     - Problem Statement: Create a multilevel inheritance hierarchy with classes 'Electronics', 'Computer', and 'Laptop'. The 'Electronics' class should have attributes 'brand' and 'price', and a method 'showDetails()'. The 'Computer' class should add 'processorType' and override 'showDetails()'. The 'Laptop' class should add 'batteryLife' and further override 'showDetails()'. Use constructors, 'this', and 'super' to demonstrate proper initialization and method calls.
+
+All for One: 
+
+1. Single Inheritance:
+   Create a Java program to model a simple vehicle hierarchy with a base class "Vehicle" and two derived classes "Car" and "Motorcycle."
+
+2. Multilevel Inheritance:
+   Develop a Java application for a school management system where you have a base class "Person," a derived class "Student," and another class "Teacher" derived from "Student."
+
+3. Hierarchical Inheritance:
+   Design a Java system for managing different types of bank accounts (Savings, Current) using hierarchical inheritance with a base class "Account" and two derived classes "SavingsAccount" and "CurrentAccount."
+
+4. Aggregation:
+   Implement a Java program to simulate a library system where you have classes for "Library," "Book," and "Member." Show the relationship between the library and its books using aggregation.
+
+5. Single Inheritance:
+   Create a Java program for a simple geometric shapes hierarchy with a base class "Shape" and two derived classes "Circle" and "Rectangle."
+
+6. Multilevel Inheritance:
+   Develop a Java application to represent employees in an organization. Create a base class "Employee," a derived class "Manager," and another class "Director" derived from "Manager."
+
+7. Hierarchical Inheritance:
+   Design a Java system for modeling different types of animals with a base class "Animal" and two derived classes "Mammal" and "Bird" to showcase hierarchical inheritance.
+
+8. Aggregation:
+   Implement a Java program for modeling a computer system with classes for "Computer," "CPU," and "Monitor." Use aggregation to represent the relationship between a computer and its components.
+
+9. Single Inheritance:
+   Create a Java program to model a musical instrument hierarchy with a base class "Instrument" and two derived classes "Guitar" and "Piano."
+
+10. Multilevel Inheritance:
+    Develop a Java application for a vehicle rental system, with a base class "Vehicle," a derived class "Car," and another class "LuxuryCar" derived from "Car" to demonstrate multilevel inheritance.
