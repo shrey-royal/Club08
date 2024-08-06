@@ -116,7 +116,46 @@ class Store {
 }
 
 class RetailCompany {
-    //
+    private Store[] stores;
+    private int storeCount;
+
+    public RetailCompany(int capacity) {
+        stores = new Store[capacity];
+        storeCount = 0;
+    }
+
+    public void addStore(Store store) {
+        if(storeCount < stores.length) {
+            stores[storeCount++] = store;
+        } else {
+            System.out.println("Stores array is full.");
+        }
+    }
+
+    public double getTotalSales() {
+        double total = 0;
+        for (int i = 0; i < storeCount; i++) {
+            total += stores[i].getTotalSales();
+        }
+        return total;
+    }
+
+    public double getAverageSalesPerStore() {
+        if(storeCount == 0) return 0;
+        return getTotalSales() / storeCount;
+    }
+
+    public Store getTopStore() {
+        if(storeCount == 0) return null;
+        Store topStore = stores[0];
+
+        for (int i = 1; i < storeCount; i++) {
+            if(stores[i].getTotalSales() > topStore.getTotalSales()) {
+                topStore = stores[i];
+            }
+        }
+        return topStore;
+    }
 }
 
 public class AGG_T1 {
