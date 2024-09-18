@@ -1,13 +1,26 @@
+// class Table {       // Resource
+//     void printTable(int n) {
+//         synchronized (this) {   // synchronized block 
+//             for (int i = 0; i <= 10; i++) {
+//                 System.out.println(n + " * " + i + " = " + n*i);
+//                 try {
+//                     Thread.sleep(500);
+//                 } catch (Exception e) {
+//                     e.printStackTrace();
+//                 }
+//             }
+//         }
+//     }
+// }
+
 class Table {       // Resource
-    void printTable(int n) {
-        synchronized (this) {   // synchronized block 
-            for (int i = 0; i <= 10; i++) {
-                System.out.println(n + " * " + i + " = " + n*i);
-                try {
-                    Thread.sleep(500);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+    synchronized void printTable(int n) {   // synchronized method
+        for (int i = 0; i <= 10; i++) {
+            System.out.println(n + " * " + i + " = " + n*i);
+            try {
+                Thread.sleep(500);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }
