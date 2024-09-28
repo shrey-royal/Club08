@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
 public class ArrList {
     public static void main(String[] args) {
@@ -9,13 +12,58 @@ public class ArrList {
         // list.add(2.333231f);
         // list.add('s');
 
-        ArrayList<String> l = new ArrayList<>();
-                
-        l.add("bapu");
-        l.add("lol");
-        l.add("pratham");
-        l.add("ttyl");
+        List<String> l = new ArrayList<>();  //type safety
 
+        l.add("Ram");
+        l.add("Shiv");
+        l.add("Hanuman");
+        l.add("Narayan");
+        l.add("Krishna");
+        l.add("Swaminarayan");
+        
+        System.out.println(l);
+
+        // ArrayList<String> l1 = new ArrayList<>();
+
+        // l1.add("Parvati");
+        // l1.add("Agni");
+        // l1.add("Aditi");
+        // l1.add("Durga");
+        // l1.add("Kali");
+        // l1.add("Lakshmi");
+
+        // l.addAll(2, l1);
+
+        // System.out.println(l.get(1));
+        // for (String name : l) {
+        //     System.out.println(name);
+        // }
+
+        // l.clear();
+        // System.out.println(l);
+
+        // iterate -> Iterable class
+        // Iterator<String> bhagwaanjis = l.iterator();
+        // while (bhagwaanjis.hasNext()) {
+        //     System.out.println(bhagwaanjis.next());
+        // }
+
+        // l.set(0, "Ramchandra");
+        // l.remove(2);
+        // l.remove("Swaminarayan");
+
+        // ArrayList<String> l1 = new ArrayList<>();
+        // l1.add("Hanuman");
+        // l1.add("Swaminarayan");
+        // l.removeAll(l1);
+
+        // System.out.println(l.size());
+
+        // Object arr[] = l.toArray();
+        // System.out.println(Arrays.toString(arr));
+
+        // System.out.println(l.contains("Shiv"));
+        // System.out.println(l.containsAll(l1));
         System.out.println(l);
     }
 }
