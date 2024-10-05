@@ -1,4 +1,4 @@
-package util;
+package com.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,13 +6,14 @@ import java.sql.DriverManager;
 public class DBConn {
 	
 	private static String URL = "jdbc:mysql://localhost:3306/club08";
+	private static String DRIVERCLASS = "com.mysql.cj.jdbc.Driver";
 	private static String USERNAME = "root";
 	private static String PASSWORD = "root";
 	
 	public static Connection getConnection() {
 		Connection conn = null;
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName(DRIVERCLASS);
 			
 			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 			

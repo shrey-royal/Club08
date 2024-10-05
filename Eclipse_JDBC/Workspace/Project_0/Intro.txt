@@ -26,4 +26,35 @@ https://learnsql.com/blog/mysql-cheat-sheet/mysql-cheat-sheet-a4.pdf
 
 Table:
 
-// jaate
+CREATE TABLE LuxuryCars (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    make VARCHAR(50) NOT NULL,
+    model VARCHAR(50) NOT NULL,
+    year INT NOT NULL CHECK (year > 1885),  -- The first car was invented around 1886
+    price DECIMAL(15, 2) NOT NULL,
+    color VARCHAR(30),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO LuxuryCars (make, model, year, price, color) VALUES
+('BMW', '7 Series', 2022, 6400000.00, 'Black'),
+('Mercedes-Benz', 'S-Class', 2023, 8800000.00, 'White'),
+('Audi', 'A8', 2021, 6300000.00, 'Silver'),
+('Porsche', 'Panamera', 2023, 7550000.00, 'Red'),
+('Lexus', 'LS 500', 2022, 6200000.00, 'Blue'),
+('Tesla', 'Model S', 2023, 7900000.00, 'Gray'),
+('Jaguar', 'XJ', 2021, 6300000.00, 'Green'),
+('Maserati', 'Quattroporte', 2022, 7800000.00, 'Maroon'),
+('Rolls-Royce', 'Phantom', 2023, 33000000.00, 'Black'),
+('Bentley', 'Flying Spur', 2022, 18500000.00, 'Gold'),
+('Ferrari', 'Portofino', 2021, 16000000.00, 'Yellow'),
+('Lamborghini', 'Aventador', 2023, 35000000.00, 'Orange'),
+('Aston Martin', 'DB11', 2022, 15000000.00, 'Silver'),
+('McLaren', '720S', 2023, 24000000.00, 'Red'),
+('Bugatti', 'Chiron', 2023, 220000000.00, 'Blue'),
+('Alfa Romeo', 'Giulia Quadrifoglio', 2021, 5500000.00, 'White'),
+('Cadillac', 'CT6', 2022, 5900000.00, 'Black'),
+('Volvo', 'S90', 2023, 5300000.00, 'Silver'),
+('Genesis', 'G90', 2023, 5900000.00, 'Dark Blue'),
+('Lincoln', 'Aviator', 2022, 5100000.00, 'Brown');
+
