@@ -18,6 +18,14 @@ public class Car {
     	this.price = price;
     	this.color = color;
     }
+    
+    public Car(String make, String model, int year, double price, String color) {
+    	this.make = make;
+    	this.model = model;
+    	this.year = year;
+    	this.price = price;
+    	this.color = color;
+    }
 	
     public int getId() {
 		return id;
