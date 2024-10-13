@@ -2,6 +2,10 @@ package com.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.model.Car;
 import com.util.DBConn;
@@ -9,6 +13,7 @@ import com.util.DBConn;
 public class CarDao {
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
+	private Statement stmt = null;
 	
 	public void addCar(Car car) {
 		String query = "INSERT INTO luxurycars (make, model, year, price, color) VALUES (?, ?, ?, ?, ?)";
@@ -31,6 +36,75 @@ public class CarDao {
 			}
 		} catch (Exception e) {
 			System.out.println("Error adding car: ");
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null) pstmt.close();
+				if (conn != null) conn.close();
+			} catch (Exception e) {
+				System.out.println("Error closing connections: ");
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public List<Car> getAllCars() {
+//		Car car = null;
+		List<Car> cars = null;
+		String query = "SELECT * FROM luxurycars";
+		
+		try {
+			conn = DBConn.getConnection();
+			stmt = conn.createStatement();
+			
+			ResultSet rs = stmt.executeQuery(query);
+			cars = new ArrayList<Car>();
+			
+			while(rs.next()) {
+//				car = new Car(rs.getInt("id"), rs.getString("make"), rs.getString("model"), rs.getInt("year"), rs.getDouble("price"), rs.getString("color"));
+				cars.add(
+						new Car(
+							rs.getInt("id"),
+							rs.getString("make"),
+							rs.getString("model"),
+							rs.getInt("year"),
+							rs.getDouble("price"),
+							rs.getString("color")
+							)
+						);
+			}
+		} catch (Exception e) {
+			System.out.println("Error adding car: ");
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null) pstmt.close();
+				if (conn != null) conn.close();
+			} catch (Exception e) {
+				System.out.println("Error closing connections: ");
+				e.printStackTrace();
+			}
+		}
+		return cars;
+	}
+
+	public void deleteCarById(int id) {
+		String query = "DELETE FROM luxurycars WHERE id = ?";
+		
+		try {
+			conn = DBConn.getConnection();
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, id);
+			
+			int ra = pstmt.executeUpdate();
+			
+			if(ra == 1) {
+				System.out.println("Car deleted successfully!");
+			} else {
+				System.out.println("Failed to delete car.");
+			}
+		} catch (Exception e) {
+			System.out.println("Error deleting car: ");
 			e.printStackTrace();
 		} finally {
 			try {

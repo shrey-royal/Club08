@@ -1,5 +1,7 @@
 package com.service;
 
+import java.util.List;
+
 import com.dao.CarDao;
 import com.model.Car;
 
@@ -12,5 +14,15 @@ public class CarService {
 		carDao = new CarDao();
 		
 		carDao.addCar(car);
+	}
+	
+	public List<Car> getAllCars() {
+		carDao = new CarDao();
+		
+		return carDao.getAllCars();
+	}
+	
+	public void deleteCarById(int car_id) {
+		carDao.deleteCarById(car_id);
 	}
 }

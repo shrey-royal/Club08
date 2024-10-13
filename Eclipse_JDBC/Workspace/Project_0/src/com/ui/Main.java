@@ -1,13 +1,16 @@
 package com.ui;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.model.Car;
 import com.service.CarService;
 
 public class Main {
+	private static CarService carService = new CarService();
+	private static Scanner sc = new Scanner(System.in);
 	
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
 		int choice = 0;
 		
 		do {
@@ -25,7 +28,15 @@ public class Main {
 			
 			switch (choice) {
 			case 1:
-				addNewCar(sc);
+				addNewCar();
+				break;
+				
+			case 2:
+				getCars();
+				break;
+				
+			case 4:
+				deleteCar();
 				break;
 				
 			case 5:
@@ -39,9 +50,7 @@ public class Main {
 		} while (choice != 5);
 	}
 	
-	public static void addNewCar(Scanner sc) {
-		CarService carService = new CarService();
-		
+	public static void addNewCar() {
 		sc.nextLine();
 		System.out.println("Enter make: ");
 		String make = sc.nextLine();
@@ -57,5 +66,20 @@ public class Main {
 		
 		carService.addCar(make, model, year, price, color);
 	}
-
+	
+	public static void getCars() {
+		ArrayList<Car> allCars = (ArrayList<Car>) carService.getAllCars();
+		
+		System.out.println("(id, make, model, year, price, color)");
+		for (Car car : allCars) {
+			System.out.println("("+car.getId()+", "+car.getMake()+", "+car.getModel()+", "+car.getYear()+", "+String.format("%.0f", car.getPrice())+", "+car.getColor()+")");
+		}
+	}
+	
+	public static void deleteCar() {
+		System.out.print("Enter the id to delete the car: ");
+		int car_id = sc.nextInt();
+		
+		carService.deleteCarById(car_id);
+	}
 }
