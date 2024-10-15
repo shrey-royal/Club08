@@ -78,7 +78,7 @@ public class CarDao {
 			e.printStackTrace();
 		} finally {
 			try {
-				if (pstmt != null) pstmt.close();
+				if (stmt != null) stmt.close();
 				if (conn != null) conn.close();
 			} catch (Exception e) {
 				System.out.println("Error closing connections: ");
@@ -105,6 +105,77 @@ public class CarDao {
 			}
 		} catch (Exception e) {
 			System.out.println("Error deleting car: ");
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null) pstmt.close();
+				if (conn != null) conn.close();
+			} catch (Exception e) {
+				System.out.println("Error closing connections: ");
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public Car getCarById(int id) {
+		Car car = null;
+		String query = "SELECT * FROM luxurycars WHERE id = ?";
+		
+		try {
+			conn = DBConn.getConnection();
+			pstmt = conn.prepareStatement(query);
+			pstmt.setInt(1, id);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				car = new Car(
+						id,
+						rs.getString("make"),
+						rs.getString("model"),
+						rs.getInt("year"),
+						rs.getDouble("price"),
+						rs.getString("color")
+						);
+			} else {
+				System.out.println("No car found of id: " + id);
+			}
+		} catch (Exception e) {
+			System.out.println("Error getting car: ");
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null) pstmt.close();
+				if (conn != null) conn.close();
+			} catch (Exception e) {
+				System.out.println("Error closing connections: ");
+				e.printStackTrace();
+			}
+		}
+		return car;
+	}
+	
+	public void updateCar(Car car) {
+		String query = "UPDATE luxurycars SET make = ?, model = ?, year = ?, price = ?, color = ? WHERE id = ?";
+		
+		try {
+			conn = DBConn.getConnection();
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, car.getMake());
+			pstmt.setString(2, car.getModel());
+			pstmt.setInt(3, car.getYear());
+			pstmt.setDouble(4, car.getPrice());
+			pstmt.setString(5, car.getColor());
+			pstmt.setInt(6, car.getId());
+
+			int ra = pstmt.executeUpdate();
+			if (ra == 1) {
+				System.out.println("Car data updated successfully!");
+			} else {
+				System.out.println("Failed to update car data!");
+			}
+		} catch (Exception e) {
+			System.out.println("Error updating car: ");
 			e.printStackTrace();
 		} finally {
 			try {

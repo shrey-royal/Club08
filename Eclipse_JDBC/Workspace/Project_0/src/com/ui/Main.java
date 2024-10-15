@@ -35,6 +35,10 @@ public class Main {
 				getCars();
 				break;
 				
+			case 3:
+				updateCar();
+				break;
+				
 			case 4:
 				deleteCar();
 				break;
@@ -74,6 +78,39 @@ public class Main {
 		for (Car car : allCars) {
 			System.out.println("("+car.getId()+", "+car.getMake()+", "+car.getModel()+", "+car.getYear()+", "+String.format("%.0f", car.getPrice())+", "+car.getColor()+")");
 		}
+	}
+	
+	public static void updateCar() {
+		System.out.print("Enter the id of car that you want to update: ");
+		int id = sc.nextInt();
+		
+		Car car = carService.getCarById(id);
+		
+		if (car == null) {
+			System.out.println("Invalid ID!");
+			return;
+		}
+		
+		sc.nextLine();
+		System.out.println("Enter make ('-' to skip): ");
+		String make = sc.nextLine();
+		System.out.println("Enter model ('-' to skip): ");
+		String model = sc.nextLine();
+		System.out.println("Enter year (0 to skip): ");
+		int year = sc.nextInt();
+		System.out.println("Enter price (0 to skip): ");
+		double price = sc.nextDouble();
+		sc.nextLine();
+		System.out.println("Enter color ('-' to skip): ");
+		String color = sc.nextLine();
+		
+		car.setMake(!make.equals("-") ? make : car.getMake());
+		car.setModel(!model.equals("-") ? model : car.getModel());
+		car.setYear( year != 0 ? year : car.getYear());
+		car.setPrice(price != 0 ? price : car.getPrice());
+		car.setColor(!color.equals("-") ? color : car.getColor());
+		
+		carService.updateCar(car);
 	}
 	
 	public static void deleteCar() {
